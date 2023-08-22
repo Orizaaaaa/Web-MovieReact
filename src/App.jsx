@@ -1,6 +1,10 @@
 import './index.css'
 import { getMovie } from './services/popularMovie'
 import { useState, useEffect } from 'react'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import { SplideTrack } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css';
+
 
 function App() {
   const [movies, setMovie] = useState([])
@@ -25,6 +29,25 @@ function App() {
 
   return (
     <>
+      <Splide
+        options={{
+          rewind: true,
+          arrows: false,
+          type: 'loop',
+          autoplay: true,
+          perPage: 3,
+          gap: 10,
+        }}
+      >
+        {movies.length > 0 && movies.map((movie) => (
+          <SplideSlide>
+            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="w-100 h-75 mb-3 rounded-3" />
+            <h5 className="fw-bold">{movie.title}</h5>
+          </SplideSlide>
+        ))}
+
+      </Splide>
+
       <h1 className=' d-grid justify-content-center' >Search Movie</h1>
       <div className="searchMovie">
         <div className="input-group mb-3 w-50 h-1 mx-auto  ">
@@ -47,6 +70,7 @@ function App() {
           </div>
         </div>
       </section>
+
 
     </>
   )
