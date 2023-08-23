@@ -1,10 +1,15 @@
 import React from 'react'
 import AuthLayout from '../components/Layout/AuthLayout'
+import { caraosel } from '../image'
 
 function Home() {
     return (
         <AuthLayout>
-            <div>Home</div>
+            <section className='homePage' >
+                <div className="moviesCaraosel d-flex ">
+                    <img src={caraosel} alt="" />
+                </div>
+            </section>
         </AuthLayout>
     )
 }

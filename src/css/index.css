@@ -1,8 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
 * {
     padding: 0px;
     margin: 0px;
+    font-family: 'Inter', sans-serif;
+    color: whi;
+}
+
+body {
+    padding: 0px 20px;
+    background-color: black !important;
 }
 
 .page-content {
     padding: 0 13px;
+}
+
+nav {
+    background-color: transparent;
+    z-index: 1;
+}
+
+.btn-element {
+    background-color: #FF0000 !important;
+    color: white !important;
+    padding: 7px 18px;
+    border: none;
+    border-radius: 5px;
 }

@@ -1,0 +1,10 @@
+.homePage .moviesCaraosel {
+    min-height: 90vh;
+
+}
+
+.homePage .moviesCaraosel img {
+    width: 102.2%;
+    height: 100%;
+
+}
