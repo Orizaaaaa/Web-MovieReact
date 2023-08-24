@@ -6,9 +6,10 @@
 .homePage .moviesCaraosel img {
     position: absolute;
     z-index: 0;
-    bottom: 7px;
+    bottom: 15px;
     width: 100%;
     height: 100%;
+
 
 }
 

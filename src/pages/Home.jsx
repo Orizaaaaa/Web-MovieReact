@@ -4,6 +4,7 @@ import { caraosel } from '../image'
 import Button from '../components/Elements/Button'
 import { CaretRightFill } from 'react-bootstrap-icons'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css';
 import { getMovie } from '../services/popularMovie'
 
 function Home() {
@@ -19,35 +20,52 @@ function Home() {
         <AuthLayout>
             <section className='homePage' >
 
-                <div className="moviesCaraosel d-flex  ">
-                    <div className="title">
-                        <h1>Talk to Me</h1>
-                        <div className="buttonCaraosel d-flex">
-                            <Button variant='Horror' />
-                            <Button variant='Thriller' />
-                        </div>
+                <Splide
+                    options={{
+                        rewind: true,
+                        arrows: false,
+                        type: 'loop',
+                        autoplay: true,
+                        perPage: 1,
 
-                        <div className="rate">
-                            <div className="progress " role="progressbar" aria-label="Basic example">
-                                <div className="progress-bar" style={{ width: `${(7.2 / 10) * 100}%` }}></div>
+                    }}
+                >
+                    {movies.map((movie) => (
+                        <SplideSlide key={movie.id}>
+                            <div className="moviesCaraosel d-flex ">
+                                <div className="title">
+                                    <h1>{movie.title}</h1>
+                                    <div className="buttonCaraosel d-flex">
+                                        <Button variant='Action' />
+                                        <Button variant='Thriller' />
+                                    </div>
+
+                                    <div className="rate">
+                                        <div className="progress " role="progressbar" aria-label="Basic example">
+                                            <div className="progress-bar" style={{ width: `${(movie.vote_average / 10) * 100}%` }}></div>
+                                        </div>
+                                        <p className='ms-1 mt-1' >{movie.vote_average}</p>
+                                    </div>
+
+                                    <p>{movie.overview}</p>
+
+                                    <div className='watchNow'>
+                                        <button >
+                                            <CaretRightFill className='me-2' /> Watch Now
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
+                                <div className="gradient"></div>
+
                             </div>
-                            <p className='ms-1 mt-1' >7.2 Rate</p>
-                        </div>
+                        </SplideSlide>
+                    ))}
 
-                        <p>When a group of friends discover how to conjure spirits using an embalmed hand, they become hooked
-                            on the new thrill, until one of them goes too far and unleashes terrifying supernatural forces.</p>
+                </Splide>
 
-                        <div className='watchNow'>
-                            <button >
-                                <CaretRightFill className='me-2' /> Watch Now
-                            </button>
-                        </div>
-                    </div>
 
-                    <img src={caraosel} alt="" />
-                    <div className="gradient"></div>
-
-                </div>
 
             </section>
         </AuthLayout >
