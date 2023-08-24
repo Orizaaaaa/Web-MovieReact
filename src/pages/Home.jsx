@@ -8,6 +8,9 @@ function Home() {
             <section className='homePage' >
                 <div className="moviesCaraosel d-flex ">
                     <img src={caraosel} alt="" />
+                    <div className="gradient">
+
+                    </div>
                 </div>
             </section>
         </AuthLayout>
