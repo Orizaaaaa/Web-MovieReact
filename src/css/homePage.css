@@ -2,6 +2,14 @@
     min-height: 85vh;
 }
 
+.homePage .moviesCaraosel .title {
+    z-index: 3;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+}
+
 
 .homePage .moviesCaraosel img {
     position: absolute;
@@ -13,6 +21,7 @@
 }
 
 .homePage .moviesCaraosel .gradient {
+    position: absolute;
     min-height: 90vh;
     width: 100%;
     display: flex;
