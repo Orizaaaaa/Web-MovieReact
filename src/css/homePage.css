@@ -2,14 +2,6 @@
     min-height: 85vh;
 }
 
-.homePage .moviesCaraosel .title {
-    z-index: 3;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    align-self: center;
-}
-
 
 .homePage .moviesCaraosel img {
     position: absolute;
@@ -29,5 +21,27 @@
     justify-content: center;
     z-index: 1;
     background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+
+}
+
+.homePage .moviesCaraosel .title {
+    z-index: 3;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    padding: 200px;
+}
+
+.homePage .moviesCaraosel .title .progress {
+    width: 400px;
+    height: 10px;
+
+}
+
+.homePage .moviesCaraosel .title .progress-bar {
+
+    background-color: #66BB6A;
+
 
 }
