@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import AuthLayout from '../components/Layout/AuthLayout'
-import { caraosel } from '../image'
 import Button from '../components/Elements/Button'
 import { CaretRightFill } from 'react-bootstrap-icons'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { getMovie } from '../services/popularMovie'
+import { StarFill } from 'react-bootstrap-icons'
 
 function Home() {
     const [movies, setMovie] = useState([])
@@ -27,6 +27,7 @@ function Home() {
                         type: 'loop',
                         autoplay: true,
                         perPage: 1,
+                        pagination: false
 
                     }}
                 >
@@ -44,7 +45,7 @@ function Home() {
                                         <div className="progress " role="progressbar" aria-label="Basic example">
                                             <div className="progress-bar" style={{ width: `${(movie.vote_average / 10) * 100}%` }}></div>
                                         </div>
-                                        <p className='ms-1 mt-1' >{movie.vote_average}</p>
+                                        <p className='ms-1 mt-1 d-flex align-items-center' > Rate {movie.vote_average} <StarFill className='ms-2' /> </p>
                                     </div>
 
                                     <p>{movie.overview}</p>

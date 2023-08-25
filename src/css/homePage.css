@@ -6,16 +6,15 @@
 .homePage .moviesCaraosel img {
     position: absolute;
     z-index: 0;
-    bottom: 15px;
     width: 100%;
-    height: 100%;
+    height: 95vh;
 
 
 }
 
 .homePage .moviesCaraosel .gradient {
     position: absolute;
-    min-height: 90vh;
+    min-height: 95vh;
     width: 100%;
     display: flex;
     align-items: end;
