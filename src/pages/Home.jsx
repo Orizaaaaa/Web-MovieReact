@@ -6,6 +6,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { getMovie } from '../services/popularMovie'
 import { StarFill } from 'react-bootstrap-icons'
+import PopularMovies from '../components/Fragment/PopularMovies'
 
 function Home() {
     const [movies, setMovie] = useState([])
@@ -22,9 +23,7 @@ function Home() {
 
                 <Splide
                     options={{
-                        rewind: true,
                         arrows: false,
-                        type: 'loop',
                         autoplay: true,
                         perPage: 1,
                         pagination: false
@@ -33,7 +32,7 @@ function Home() {
                 >
                     {movies.map((movie) => (
                         <SplideSlide key={movie.id}>
-                            <div className="moviesCaraosel d-flex ">
+                            <section className="moviesCaraosel d-flex ">
                                 <div className="title">
                                     <h1>{movie.title}</h1>
                                     <div className="buttonCaraosel d-flex">
@@ -60,12 +59,15 @@ function Home() {
                                 <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
                                 <div className="gradient"></div>
 
-                            </div>
+                            </section>
                         </SplideSlide>
                     ))}
 
                 </Splide>
 
+                <section className='popularMovies' >
+                    <PopularMovies />
+                </section>
 
 
             </section>

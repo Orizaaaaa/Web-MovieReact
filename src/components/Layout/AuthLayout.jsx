@@ -15,7 +15,7 @@ function AuthLayout(props) {
                     </button>
                     <div className="collapse navbar-collapse " id="navbarNav">
                         <ul className="navbar-nav mx-auto">
-                            <NavbarList title='Home' location='/Home' />
+                            <NavbarList title='Home' location='/Home' condition='active' />
                             <NavbarList title='Movies' location='/Movies' />
                             <NavbarList title='Tv Series' />
                             <NavbarList title='Search' />
