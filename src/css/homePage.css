@@ -64,3 +64,16 @@
     display: flex;
     align-items: center;
 }
+
+
+/* popular  */
+.popularMovies .caraoselPopular {
+    padding: 0px 20px;
+
+}
+
+.popularMovies .caraoselPopular h3 {
+    border-bottom: 3px solid red;
+    margin-bottom: 20px;
+
+}

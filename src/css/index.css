@@ -13,14 +13,18 @@ body {
 
 nav {
     z-index: 2;
-    background-color: transparent;
     color: #ffff;
     font-weight: 500;
 }
 
+.navbarbgActive {
+    background-color: #333333;
+    transition: 0.4s;
+}
+
 nav .navbar-collapse .navbar-nav .nav-item a:hover {
     color: #FF0000 !important;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 nav .navbar-collapse .navbar-nav .nav-item a::after {
@@ -35,6 +39,8 @@ nav .navbar-collapse .navbar-nav .nav-item a::after {
 nav .navbar-collapse .navbar-nav .nav-item a:hover::after {
     width: 100%;
 }
+
+
 
 .btn-element {
     background-color: #FF0000 !important;

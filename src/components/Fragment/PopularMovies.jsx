@@ -18,7 +18,7 @@ function PopularMovies() {
     return (
 
         <div className="caraoselPopular">
-            <h3>POPULAR MOVIES</h3>
+            <h3 >POPULAR MOVIES</h3>
             <Splide
                 options={{
                     rewind: true,
@@ -27,7 +27,13 @@ function PopularMovies() {
                     autoplay: true,
                     perPage: 5,
                     gap: 10,
-                    pagination: false
+                    pagination: false,
+                    breakpoints: {
+                        992: {
+                            perPage: 4,
+                        },
+                    }
+
                 }}
             >
                 {movies.map((movie) => (

@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavbarList from '../Fragment/NavbarList'
 import Button from '../Elements/Button'
 import { logoflix } from '../../image'
 
 function AuthLayout(props) {
     const { children } = props
+
+    const [navbarBg, setnavbarBg] = useState(false)
+    const changeBackground = () => {
+        if (window.scrollY >= 80) {
+            setnavbarBg(true)
+        } else {
+            setnavbarBg(false)
+        }
+    }
+    window.addEventListener('scroll', changeBackground)
+
+
     return (
         <>
-            <nav className="navbar navbar-expand-lg position-fixed w-100">
+            <nav className={`navbar ${navbarBg ? 'navbarbgActive' : ''} navbar-expand-lg position-fixed w-100`}>
                 <div className="container-fluid ">
                     <a className="navbar-brand" href="#"><img src={logoflix} alt="" /></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +35,7 @@ function AuthLayout(props) {
                         <Button variant='SIGN IN' />
                     </div>
                 </div>
-            </nav>
+            </nav >
 
             <main className="page-content">
                 {children}
