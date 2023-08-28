@@ -36,8 +36,10 @@ function Home() {
                                 <div className="title">
                                     <h1>{movie.title}</h1>
                                     <div className="buttonCaraosel d-flex">
+                                        {/* <Button variant={`${movie.genre_ids.shift()}`} /> */}
                                         <Button variant='Action' />
                                         <Button variant='Thriller' />
+
                                     </div>
 
                                     <div className="rate">
