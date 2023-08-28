@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import NavbarList from '../Fragment/NavbarList'
 import Button from '../Elements/Button'
 import { logoflix } from '../../image'
+import { JustifyLeft } from 'react-bootstrap-icons'
 
 function AuthLayout(props) {
     const { children } = props
@@ -21,10 +22,13 @@ function AuthLayout(props) {
         <>
             <nav className={`navbar ${navbarBg ? 'navbarbgActive' : ''} navbar-expand-lg position-fixed w-100`}>
                 <div className="container-fluid ">
+
                     <a className="navbar-brand" href="#"><img src={logoflix} alt="" /></a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+
+                    <button class="btn d-lg-none " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"
+                        aria-expanded="false" aria-label="Toggle navigation"><JustifyLeft /></button>
+
+
                     <div className="collapse navbar-collapse " id="navbarNav">
                         <ul className="navbar-nav mx-auto">
                             <NavbarList title='Home' location='/Home' condition='active' />
@@ -37,6 +41,15 @@ function AuthLayout(props) {
                 </div>
             </nav >
 
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p className='text-black'>Try scrolling the rest of the page to see this option in action.</p>
+                </div>
+            </div>
             <main className="page-content">
                 {children}
             </main>
