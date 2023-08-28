@@ -69,11 +69,42 @@
 /* popular  */
 .popularMovies .caraoselPopular {
     padding: 0px 20px;
-
 }
 
 .popularMovies .caraoselPopular h3 {
     border-bottom: 3px solid red;
     margin-bottom: 20px;
+
+}
+
+
+.popularMovies .caraoselPopular .cardPopular img {
+    height: 420px !important;
+    cursor: pointer;
+}
+
+.popularMovies .caraoselPopular .rate {
+    position: absolute;
+    bottom: 10px;
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: 0.3s;
+    opacity: 0;
+
+}
+
+.popularMovies .caraoselPopular .rate .progress .progress-bar {
+    background-color: #66BB6A;
+}
+
+.popularMovies .caraoselPopular .rate .progress {
+    height: 12px;
+}
+
+.popularMovies .caraoselPopular .cardPopular:hover .rate {
+    transform: translateY(0px);
+    opacity: 1;
+    background: linear-gradient(to top, #000 0%, rgba(0, 4, 0, 0) 100%);
 
 }
