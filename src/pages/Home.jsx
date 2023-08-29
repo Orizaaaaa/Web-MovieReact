@@ -7,6 +7,7 @@ import '@splidejs/react-splide/css';
 import { getMovie } from '../services/popularMovie'
 import { StarFill } from 'react-bootstrap-icons'
 import PopularMovies from '../components/Fragment/PopularMovies'
+import GenreCard from '../components/Fragment/GenreCard'
 
 function Home() {
     const [movies, setMovie] = useState([])
@@ -36,7 +37,6 @@ function Home() {
                                 <div className="title">
                                     <h1>{movie.title}</h1>
                                     <div className="buttonCaraosel d-flex">
-                                        {/* <Button variant={`${movie.genre_ids.shift()}`} /> */}
                                         <Button variant='Action' />
                                         <Button variant='Thriller' />
 
