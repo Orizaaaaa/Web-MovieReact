@@ -1,102 +1,100 @@
-  const [movies, setMovie] = useState([])
+import React, { useEffect, useState } from 'react'
+import AuthLayout from '../components/Layout/AuthLayout'
+import Button from '../components/Elements/Button'
+import { CaretRightFill } from 'react-bootstrap-icons'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/react-splide/css';
+import { getMovie } from '../services/popularMovie'
+import { StarFill } from 'react-bootstrap-icons'
+import PopularMovies from '../components/Fragment/PopularMovies'
+import GenreCard from '../components/Fragment/GenreCard'
+import { RingLoader } from 'react-spinners'
 
-  useEffect(() => {
-    getMovie((results) => {
-      setMovie(results)
-    })
-  }, []);
+function Home() {
+    const [movies, setMovie] = useState([])
+    const [loading, setLoading] = useState(true)
 
-  const [inputValue, setInputValue] = useState('')
+    useEffect(() => {
+        getMovie((results) => {
+            setMovie(results)
+            setLoading(false)
+        }, 6000)
+    }, []);
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value)
-  }
+    return (
+        <AuthLayout>
+            <section className='homePage' >
 
-  const handleButton = () => {
-    console.log(inputValue);
-  }
-
-
-
-
-caraosel dan spslide : 
- <Splide
-        options={{
-          rewind: true,
-          arrows: false,
-          type: 'loop',
-          autoplay: true,
-          perPage: 3,
-          gap: 10,
-        }}
-      >
-        {movies.length > 0 && movies.map((movie) => (
-          <SplideSlide key={movie.id}>
-            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="w-100 h-75 mb-3 rounded-3" />
-            <h5 className="fw-bold">{movie.title}</h5>
-            <img src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} />
-          </SplideSlide>
-        ))}
-
-      </Splide>
-
-      <h1 className=' d-grid justify-content-center' >Search Movie</h1>
-      <div className="searchMovie">
-        <div className="input-group mb-3 w-50 h-1 mx-auto  ">
-          <input onChange={handleInputChange} value={inputValue} type="text" className="form-control shadow-none " placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" />
-          <button onClick={handleButton} className="btn btn-primary" type="button" id="button-addon2">Button</button>
-        </div>
-      </div>
-
-      <section className="project mt-5 d-flex align-items-center">
-        <div className="container">
-          <div className="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4">
-
-            {movies.length > 0 && movies.map((movie) => (
-              <div className="col" key={movie.id}>
-                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="w-100 mb-3 rounded-3" />
-                <h5 className="fw-bold">{movie.title}</h5>
-                <p>{movie.overview}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-
-
-
-
-
-
-
-            {/* <div className="moviesCaraosel d-flex  ">
-                    <div className="title">
-                        <h1>Talk to Me</h1>
-                        <div className="buttonCaraosel d-flex">
-                            <Button variant='Horror' />
-                            <Button variant='Thriller' />
+                <div>
+                    {loading ? (
+                        <div className="spinner-container">
+                            <RingLoader color="#123abc" loading={loading} size={100} />
                         </div>
+                    ) : (
+                        <div>
+                            {setMovie ? (
+                                <Splide
+                                    options={{
+                                        arrows: false,
+                                        autoplay: true,
+                                        perPage: 1,
+                                        pagination: false
 
-                        <div className="rate">
-                            <div className="progress " role="progressbar" aria-label="Basic example">
-                                <div className="progress-bar" style={{ width: `${(7.2 / 10) * 100}%` }}></div>
-                            </div>
-                            <p className='ms-1 mt-1' >7.2 Rate</p>
+                                    }}
+                                >
+
+                                    {movies.map((movie) => (
+                                        <SplideSlide key={movie.id}>
+                                            <section className="moviesCaraosel d-flex ">
+                                                <div className="title">
+                                                    <h1>{movie.title}</h1>
+                                                    <div className="buttonCaraosel d-flex">
+                                                        <Button variant='Action' />
+                                                        <Button variant='Thriller' />
+
+                                                    </div>
+
+                                                    <div className="rate">
+                                                        <div className="progress " role="progressbar" aria-label="Basic example">
+                                                            <div className="progress-bar" style={{ width: `${(movie.vote_average / 10) * 100}%` }}></div>
+                                                        </div>
+                                                        <p className='ms-1 mt-1 d-flex align-items-center' > Rate {movie.vote_average} <StarFill className='ms-2' /> </p>
+                                                    </div>
+
+                                                    <p>{movie.overview}</p>
+
+                                                    <div className='watchNow'>
+                                                        <button >
+                                                            <CaretRightFill className='me-2' /> Watch Now
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />
+                                                <div className="gradient"></div>
+
+                                            </section>
+                                        </SplideSlide>
+                                    ))}
+
+                                </Splide>
+                            ) : (
+                                <p>No data available.</p>
+                            )}
                         </div>
+                    )}
+                </div>
 
-                        <p>When a group of friends discover how to conjure spirits using an embalmed hand, they become hooked
-                            on the new thrill, until one of them goes too far and unleashes terrifying supernatural forces.</p>
 
-                        <div className='watchNow'>
-                            <button >
-                                <CaretRightFill className='me-2' /> Watch Now
-                            </button>
-                        </div>
-                    </div>
 
-                    <img src={caraosel} alt="" />
-                    <div className="gradient"></div>
+                <section className='popularMovies' >
+                    <PopularMovies />
+                </section>
 
-                </div> */}
+
+            </section>
+        </AuthLayout >
+    )
+}
+
+export default Home

@@ -14,7 +14,8 @@ function PopularMovies() {
     useEffect(() => {
         getMovie((results) => {
             setMovie(results)
-        })
+            setLoading(false)
+        }, 3000)
     }, []);
 
     return (
@@ -40,6 +41,7 @@ function PopularMovies() {
 
                 }}
             >
+
                 {movies.map((movie) => (
                     <SplideSlide key={movie.id}>
                         <div className="cardPopular">
