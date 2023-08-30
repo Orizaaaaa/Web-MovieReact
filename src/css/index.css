@@ -17,8 +17,30 @@ nav {
     font-weight: 500;
 }
 
-.navbarbgActive {
+nav .container-fluid .btnRight {
+    width: 25px;
+    height: 25px;
+}
+
+.offcanvas-start {
+    width: 300px !important;
+}
+
+
+.offcanvas-start .offcanvas-body .navbar-nav li .nav-link {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #FF0000;
+}
+
+.offcanvas .offcanvas-header,
+.offcanvas-body {
     background-color: #333333;
+}
+
+.navbarbgActive {
+    background-color: #141414;
     transition: 0.4s;
 }
 
