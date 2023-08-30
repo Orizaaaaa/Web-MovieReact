@@ -3,6 +3,7 @@ import { getMovie } from '../../services/popularMovie'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { StarFill } from 'react-bootstrap-icons';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -42,7 +43,10 @@ function PopularMovies() {
                 {movies.map((movie) => (
                     <SplideSlide key={movie.id}>
                         <div className="cardPopular">
-                            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="w-100 h-75 mb-3 rounded-3" />
+
+                            <NavLink to={'/Movies'}>
+                                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="w-100 h-75 mb-3 rounded-3" />
+                            </NavLink>
 
                             <div className="rate mx-auto w-100 p-2">
                                 <h4>{movie.title}</h4>

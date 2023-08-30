@@ -13,14 +13,11 @@ function GenreCard(props) {
     }, []);
     console.log(genre);
 
-    const { genreName } = props
-
     return (
         <>
             <div className="buttonCaraosel d-flex">
                 {genre.map((genres) => (
-                    // <Button variant={genres[genreName]} />
-                    <Button variant={`${genres}.${genreName}`} />
+                    <Button variant={genres.name} />
                 ))}
 
                 <Button variant='Thriller' />
