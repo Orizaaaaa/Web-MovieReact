@@ -5,7 +5,7 @@ import GenreCard from '../components/Fragment/GenreCard'
 function Movies() {
     return (
         <AuthLayout>
-            <GenreCard />
+            {/* <GenreCard /> */}
             {/* <Button variant={`${movie.genre_ids.shift()}`} /> */}
             {/* <GenreCard genreName={`${movie.genre_ids.shift()}`} /> */}
         </AuthLayout>

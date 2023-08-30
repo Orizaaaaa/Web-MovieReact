@@ -3,21 +3,21 @@ import { getMovie } from '../../services/popularMovie'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { StarFill } from 'react-bootstrap-icons';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 
 
-function PopularMovies() {
+function PopularMovies(props) {
     const [movies, setMovie] = useState([])
 
     useEffect(() => {
         getMovie((results) => {
             setMovie(results)
-            setLoading(false)
-        }, 3000)
+        })
     }, []);
 
+    const { id } = props
     return (
 
         <div className="caraoselPopular">
@@ -46,9 +46,9 @@ function PopularMovies() {
                     <SplideSlide key={movie.id}>
                         <div className="cardPopular">
 
-                            <NavLink to={'/Movies'}>
+                            <Link to={`/Movie/${movie.id}`}>
                                 <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="w-100 h-75 mb-3 rounded-3" />
-                            </NavLink>
+                            </Link>
 
                             <div className="rate mx-auto w-100 p-2">
                                 <h4>{movie.title}</h4>
