@@ -36,10 +36,10 @@ function Home() {
                             <section className="moviesCaraosel d-flex ">
                                 <div className="title">
                                     <h1>{movie.title}</h1>
-                                    <div className="buttonCaraosel d-flex">
+
+                                    <div className="buttonGenre d-flex">
                                         <Button variant='Action' />
                                         <Button variant='Thriller' />
-
                                     </div>
 
                                     <div className="rate">
@@ -56,6 +56,7 @@ function Home() {
                                             <CaretRightFill className='me-2' /> Watch Now
                                         </button>
                                     </div>
+
                                 </div>
 
                                 <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" />

@@ -47,12 +47,12 @@
     padding: 200px;
 }
 
-.buttonCaraosel {
+.buttonGenre {
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.buttonCaraosel button {
+.buttonGenre button {
     border-radius: 25px;
 }
 
