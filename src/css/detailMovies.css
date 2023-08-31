@@ -1,4 +1,4 @@
 .insideParalax {
-    height: 85vh;
+    min-height: 85vh;
     padding: 0px 12px;
 }
