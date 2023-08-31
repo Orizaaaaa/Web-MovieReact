@@ -4,3 +4,8 @@
     min-height: 85vh;
     position: absolute;
 }
+
+.insideParalax .col:nth-child(1) img {
+    width: 500px;
+    height: 700px;
+}

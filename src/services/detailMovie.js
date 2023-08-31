@@ -9,3 +9,5 @@ export const getDetailMovie = (id, callback) => {
         })
 }
 
+
+// https://api.themoviedb.org/3/person/976?api_key=dfe4412d30f120b43153186b0aa24994
