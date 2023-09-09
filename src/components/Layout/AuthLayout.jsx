@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import NavbarList from '../Fragment/NavbarList'
 import Button from '../Elements/Button'
 import { logoflix } from '../../image'
-import { House, HouseFill, PlayBtn, Search, Tv } from 'react-bootstrap-icons'
+import { HouseFill, PlayBtn, Search, Tv } from 'react-bootstrap-icons'
 import ButtonSideBar from '../Fragment/buttonSideBar'
 
 function AuthLayout(props) {
     const { children } = props
 
     const [navbarBg, setnavbarBg] = useState(false)
+
     const changeBackground = () => {
         if (window.scrollY >= 80) {
             setnavbarBg(true)

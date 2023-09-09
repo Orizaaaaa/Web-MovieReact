@@ -4,6 +4,7 @@ import Button from '../Elements/Button';
 
 function GenreCard(props) {
     const [genre, setGenre] = useState([])
+
     useEffect(() => {
         getGenre((genres) => {
             setGenre(genres)
