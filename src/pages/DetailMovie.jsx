@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getDetailMovie } from '../services/detailMovie'
 import AuthLayout from '../components/Layout/AuthLayout'
-import { caraosel, logoflix, vertImage } from '../image'
 import { CaretRightFill, StarFill } from 'react-bootstrap-icons'
 import Button from '../components/Elements/Button'
 

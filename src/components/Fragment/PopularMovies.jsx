@@ -3,12 +3,12 @@ import { getMovie } from '../../services/popularMovie'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { StarFill } from 'react-bootstrap-icons';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
 
-function PopularMovies(props) {
+function PopularMovies() {
     const [movies, setMovie] = useState([])
 
     useEffect(() => {
@@ -17,7 +17,6 @@ function PopularMovies(props) {
         })
     }, []);
 
-    const { id } = props
     return (
 
         <div className="caraoselPopular">
