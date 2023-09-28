@@ -1,5 +1,5 @@
 import React from 'react'
-import { JustifyLeft, JustifyRight } from 'react-bootstrap-icons'
+import { JustifyRight } from 'react-bootstrap-icons'
 
 function ButtonSideBar() {
     return (
