@@ -22,7 +22,7 @@ function AuthLayout(props) {
 
     return (
         <>
-            <nav className={`navbar ${navbarBg ? 'navbarbgActive' : ''} navbar-expand-lg position-fixed w-100`}>
+            <nav className={`navbar ${navbarBg ? 'navbarbgActive' : ''} navbar-expand-lg position-fixed rounded-0 w-100`}>
                 <div className="container-fluid ">
 
                     <a className="navbar-brand" href="#"><img src={logoflix} alt="" /></a>
