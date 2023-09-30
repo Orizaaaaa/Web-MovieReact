@@ -15,6 +15,7 @@ nav {
     z-index: 2;
     color: #ffff;
     font-weight: 500;
+    height: 60px;
 }
 
 nav .container-fluid .btnRight {
